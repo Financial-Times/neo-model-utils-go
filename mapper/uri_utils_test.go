@@ -58,7 +58,7 @@ var (
 	locationURI               = "http://www.ft.com/ontology/Location"
 	specialReportURI          = "http://www.ft.com/ontology/SpecialReport"
 	alphavilleSeriesURI       = "http://www.ft.com/ontology/AlphavilleSeries"
-	financialInstrumentURI    = "http://www.ft.com/ontology/FinancialInstrument"
+	financialInstrumentURI    = "http://www.ft.com/ontology/financialInstrument/FinancialInstrument"
 
 	uuid = "92f4ec09-436d-4092-a88c-96f54e34007c"
 
