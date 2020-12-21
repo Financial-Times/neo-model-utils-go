@@ -15,54 +15,55 @@ func allLabelsFor(label string) []string {
 }
 
 var (
-	thingLabels                  = allLabelsFor("Thing")
-	conceptLabels                = allLabelsFor("Concept")
-	boardRoleLabels              = allLabelsFor("BoardRole")
-	membershipRoleLabels         = allLabelsFor("MembershipRole")
-	brandLabels                  = allLabelsFor("Brand")
-	personLabels                 = allLabelsFor("Person")
-	organisationLabels           = allLabelsFor("Organisation")
-	membershipLabels             = allLabelsFor("Membership")
-	companyLabels                = allLabelsFor("Company")
-	publicCompanyLabels          = allLabelsFor("PublicCompany")
-	privateCompanyLabels         = allLabelsFor("PrivateCompany")
-	classificationLabels         = allLabelsFor("Classification")
-	industryClassificationLabels = allLabelsFor("IndustryClassification")
-	subjectLabels                = allLabelsFor("Subject")
-	sectionLabels                = allLabelsFor("Section")
-	genreLabels                  = allLabelsFor("Genre")
-	topicLabels                  = allLabelsFor("Topic")
-	locationLabels               = allLabelsFor("Location")
-	specialReportLabels          = allLabelsFor("SpecialReport")
-	alphavilleSeriesLabels       = allLabelsFor("AlphavilleSeries")
-	financialInstrumentsLabels   = allLabelsFor("FinancialInstrument")
+	thingLabels                       = allLabelsFor("Thing")
+	conceptLabels                     = allLabelsFor("Concept")
+	boardRoleLabels                   = allLabelsFor("BoardRole")
+	membershipRoleLabels              = allLabelsFor("MembershipRole")
+	brandLabels                       = allLabelsFor("Brand")
+	personLabels                      = allLabelsFor("Person")
+	organisationLabels                = allLabelsFor("Organisation")
+	membershipLabels                  = allLabelsFor("Membership")
+	companyLabels                     = allLabelsFor("Company")
+	publicCompanyLabels               = allLabelsFor("PublicCompany")
+	privateCompanyLabels              = allLabelsFor("PrivateCompany")
+	classificationLabels              = allLabelsFor("Classification")
+	subjectLabels                     = allLabelsFor("Subject")
+	sectionLabels                     = allLabelsFor("Section")
+	genreLabels                       = allLabelsFor("Genre")
+	topicLabels                       = allLabelsFor("Topic")
+	locationLabels                    = allLabelsFor("Location")
+	specialReportLabels               = allLabelsFor("SpecialReport")
+	alphavilleSeriesLabels            = allLabelsFor("AlphavilleSeries")
+	financialInstrumentsLabels        = allLabelsFor("FinancialInstrument")
+	industryClassificationLabels      = allLabelsFor("IndustryClassification")
+	naicsIndustryClassificationLabels = allLabelsFor("NAICSIndustryClassification")
 
-	thingURI                  = "http://www.ft.com/ontology/core/Thing"
-	conceptURI                = "http://www.ft.com/ontology/concept/Concept"
-	boardRoleURI              = "http://www.ft.com/ontology/organisation/BoardRole"
-	membershipRoleURI         = "http://www.ft.com/ontology/MembershipRole"
-	classificationURI         = "http://www.ft.com/ontology/classification/Classification"
-	industryClassificationURI = "http://www.ft.com/ontology/industry/IndustryClassification"
-	personURI                 = "http://www.ft.com/ontology/person/Person"
-	brandURI                  = "http://www.ft.com/ontology/product/Brand"
-	organisationURI           = "http://www.ft.com/ontology/organisation/Organisation"
-	membershipURI             = "http://www.ft.com/ontology/organisation/Membership"
-	companyURI                = "http://www.ft.com/ontology/company/Company"
-	publicCompanyURI          = "http://www.ft.com/ontology/company/PublicCompany"
-	privateCompanyURI         = "http://www.ft.com/ontology/company/PrivateCompany"
-	subjectURI                = "http://www.ft.com/ontology/Subject"
-	sectionURI                = "http://www.ft.com/ontology/Section"
-	genreURI                  = "http://www.ft.com/ontology/Genre"
-	topicURI                  = "http://www.ft.com/ontology/Topic"
-	locationURI               = "http://www.ft.com/ontology/Location"
-	specialReportURI          = "http://www.ft.com/ontology/SpecialReport"
-	alphavilleSeriesURI       = "http://www.ft.com/ontology/AlphavilleSeries"
-	financialInstrumentURI    = "http://www.ft.com/ontology/FinancialInstrument"
+	thingURI                       = "http://www.ft.com/ontology/core/Thing"
+	conceptURI                     = "http://www.ft.com/ontology/concept/Concept"
+	boardRoleURI                   = "http://www.ft.com/ontology/organisation/BoardRole"
+	membershipRoleURI              = "http://www.ft.com/ontology/MembershipRole"
+	classificationURI              = "http://www.ft.com/ontology/classification/Classification"
+	personURI                      = "http://www.ft.com/ontology/person/Person"
+	brandURI                       = "http://www.ft.com/ontology/product/Brand"
+	organisationURI                = "http://www.ft.com/ontology/organisation/Organisation"
+	membershipURI                  = "http://www.ft.com/ontology/organisation/Membership"
+	companyURI                     = "http://www.ft.com/ontology/company/Company"
+	publicCompanyURI               = "http://www.ft.com/ontology/company/PublicCompany"
+	privateCompanyURI              = "http://www.ft.com/ontology/company/PrivateCompany"
+	subjectURI                     = "http://www.ft.com/ontology/Subject"
+	sectionURI                     = "http://www.ft.com/ontology/Section"
+	genreURI                       = "http://www.ft.com/ontology/Genre"
+	topicURI                       = "http://www.ft.com/ontology/Topic"
+	locationURI                    = "http://www.ft.com/ontology/Location"
+	specialReportURI               = "http://www.ft.com/ontology/SpecialReport"
+	alphavilleSeriesURI            = "http://www.ft.com/ontology/AlphavilleSeries"
+	financialInstrumentURI         = "http://www.ft.com/ontology/FinancialInstrument"
+	industryClassificationURI      = "http://www.ft.com/ontology/IndustryClassification"
+	naicsIndustryClassificationURI = "http://www.ft.com/ontology/NAICSIndustryClassification"
 
 	uuid = "92f4ec09-436d-4092-a88c-96f54e34007c"
 
-	env     = "prod"
-	envTest = "test"
+	env = "prod"
 
 	baseAPIURL         = "http://api.ft.com/"
 	thingAPIURL        = baseAPIURL + "things/" + uuid
@@ -86,13 +87,25 @@ var (
 		"http://www.ft.com/ontology/company/PublicCompany",
 	}
 
-	boardRoleHierarchy = []string {
+	boardRoleHierarchy = []string{
 		"http://www.ft.com/ontology/core/Thing",
 		"http://www.ft.com/ontology/concept/Concept",
 		"http://www.ft.com/ontology/MembershipRole",
 		"http://www.ft.com/ontology/organisation/BoardRole",
 	}
 )
+
+func TestTypeURIsForThings(t *testing.T) {
+	assert.New(t).EqualValues([]string{thingURI}, TypeURIs(thingLabels))
+}
+
+func TestTypeURIsForConcepts(t *testing.T) {
+	assert.New(t).EqualValues([]string{thingURI, conceptURI}, TypeURIs(conceptLabels))
+}
+
+func TestTypeURIsForClassifications(t *testing.T) {
+	assert.New(t).EqualValues([]string{thingURI, conceptURI, classificationURI}, TypeURIs(classificationLabels))
+}
 
 func TestTypeURIsForPeople(t *testing.T) {
 	assert.New(t).EqualValues([]string{thingURI, conceptURI, personURI}, TypeURIs(personLabels))
@@ -155,7 +168,11 @@ func TestTypeURIsForSpecialReport(t *testing.T) {
 }
 
 func TestTypeURIsForIndustryClassification(t *testing.T) {
-	assert.New(t).EqualValues([]string{thingURI, conceptURI, classificationURI, industryClassificationURI}, TypeURIs(industryClassificationLabels))
+	assert.New(t).EqualValues([]string{thingURI, conceptURI, industryClassificationURI}, TypeURIs(industryClassificationLabels))
+}
+
+func TestTypeURIsForNAICSIndustryClassification(t *testing.T) {
+	assert.New(t).EqualValues([]string{thingURI, conceptURI, industryClassificationURI, naicsIndustryClassificationURI}, TypeURIs(naicsIndustryClassificationLabels))
 }
 
 func TestTypeURIsForAlphavilleSeries(t *testing.T) {
@@ -283,9 +300,9 @@ func TestTypeSorter(t *testing.T) {
 func TestFullTypeHierarchy(t *testing.T) {
 	assert := assert.New(t)
 	for _, t := range []struct {
-		startingType string
+		startingType      string
 		expectedHierarchy []string
-	} {
+	}{
 		{
 			"Brand",
 			brandHierarchy,
@@ -319,6 +336,5 @@ func TestFullTypeHierarchy(t *testing.T) {
 		convertedHierarchy := FullTypeHierarchy(t.startingType)
 		assert.Equal(t.expectedHierarchy, convertedHierarchy)
 	}
-
 
 }
