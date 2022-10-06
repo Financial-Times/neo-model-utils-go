@@ -1,6 +1,9 @@
 package mapper
 
-import "log"
+import (
+	"fmt"
+	"log"
+)
 
 var apiPaths = map[string]string{
 	"Organisation": "organisations",
@@ -78,4 +81,30 @@ func TypeURIs(labels []string) []string {
 		}
 	}
 	return results
+}
+
+// TypesFromURIs converts list of typeURIs to types based on the "typeURIs" mapping.
+// The returned concept type list is sorted based on the "parentTypes" hierarchy.
+// If a typeURI is not part of the "typeURIs" mapping, or if the type list is un-sortable it returns an error.
+func TypesFromURIs(types []string) ([]string, error) {
+	var result []string
+	for _, t := range types {
+		var found bool
+		for key, val := range typeURIs {
+			if val != t {
+				continue
+			}
+			result = append(result, key)
+			found = true
+			break
+		}
+		if !found {
+			return nil, fmt.Errorf("type uri '%s' not part of the type heirarcy", t)
+		}
+	}
+	sorted, err := SortTypes(result)
+	if err != nil {
+		return nil, err
+	}
+	return sorted, nil
 }
