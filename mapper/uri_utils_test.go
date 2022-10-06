@@ -11,7 +11,8 @@ func allLabelsFor(label string) []string {
 	for t := label; t != ""; t = ParentType(t) {
 		allLabels = append(allLabels, t)
 	}
-	return allLabels
+	s, _ := SortTypes(allLabels)
+	return s
 }
 
 var (
@@ -337,4 +338,74 @@ func TestFullTypeHierarchy(t *testing.T) {
 		assert.Equal(t.expectedHierarchy, convertedHierarchy)
 	}
 
+}
+func TestTypesFromURIs(t *testing.T) {
+	t.Parallel()
+	tests := map[string]struct {
+		TypeURIs []string
+		Types    []string
+	}{
+		"Things":                      {TypeURIs: []string{thingURI}, Types: thingLabels},
+		"Concepts":                    {TypeURIs: []string{thingURI, conceptURI}, Types: conceptLabels},
+		"Classifications":             {TypeURIs: []string{thingURI, conceptURI, classificationURI}, Types: classificationLabels},
+		"People":                      {TypeURIs: []string{thingURI, conceptURI, personURI}, Types: personLabels},
+		"Organisations":               {TypeURIs: []string{thingURI, conceptURI, organisationURI}, Types: organisationLabels},
+		"Memberships":                 {TypeURIs: []string{thingURI, conceptURI, membershipURI}, Types: membershipLabels},
+		"MembershipRoles":             {TypeURIs: []string{thingURI, conceptURI, membershipRoleURI}, Types: membershipRoleLabels},
+		"BoardRoles":                  {TypeURIs: []string{thingURI, conceptURI, membershipRoleURI, boardRoleURI}, Types: boardRoleLabels},
+		"Company":                     {TypeURIs: []string{thingURI, conceptURI, organisationURI, companyURI}, Types: companyLabels},
+		"PublicCompany":               {TypeURIs: []string{thingURI, conceptURI, organisationURI, companyURI, publicCompanyURI}, Types: publicCompanyLabels},
+		"PrivateCompany":              {TypeURIs: []string{thingURI, conceptURI, organisationURI, companyURI, privateCompanyURI}, Types: privateCompanyLabels},
+		"Brand":                       {TypeURIs: []string{thingURI, conceptURI, classificationURI, brandURI}, Types: brandLabels},
+		"Subject":                     {TypeURIs: []string{thingURI, conceptURI, classificationURI, subjectURI}, Types: subjectLabels},
+		"Section":                     {TypeURIs: []string{thingURI, conceptURI, classificationURI, sectionURI}, Types: sectionLabels},
+		"Genre":                       {TypeURIs: []string{thingURI, conceptURI, classificationURI, genreURI}, Types: genreLabels},
+		"Topic":                       {TypeURIs: []string{thingURI, conceptURI, topicURI}, Types: topicLabels},
+		"Location":                    {TypeURIs: []string{thingURI, conceptURI, locationURI}, Types: locationLabels},
+		"SpecialReport":               {TypeURIs: []string{thingURI, conceptURI, classificationURI, specialReportURI}, Types: specialReportLabels},
+		"IndustryClassification":      {TypeURIs: []string{thingURI, conceptURI, industryClassificationURI}, Types: industryClassificationLabels},
+		"NAICSIndustryClassification": {TypeURIs: []string{thingURI, conceptURI, industryClassificationURI, naicsIndustryClassificationURI}, Types: naicsIndustryClassificationLabels},
+		"AlphavilleSeries":            {TypeURIs: []string{thingURI, conceptURI, classificationURI, alphavilleSeriesURI}, Types: alphavilleSeriesLabels},
+		"FinancialInstruments":        {TypeURIs: []string{thingURI, conceptURI, financialInstrumentURI}, Types: financialInstrumentsLabels},
+	}
+
+	for name, test := range tests {
+		test := test
+		t.Run(name, func(t *testing.T) {
+			t.Parallel()
+			result, err := TypesFromURIs(test.TypeURIs)
+			assert.NoError(t, err)
+			assert.EqualValues(t, test.Types, result)
+		})
+	}
+}
+
+func TestTypesFromURIsErrors(t *testing.T) {
+	t.Parallel()
+	tests := map[string]struct {
+		TypeURIs []string
+	}{
+		"invalid type uri": {
+			TypeURIs: []string{
+				"invalid-type-uri",
+			},
+		},
+		"unsortable types": {
+			TypeURIs: []string{
+				organisationURI,
+				publicCompanyURI,
+				privateCompanyURI,
+				companyURI,
+			},
+		},
+	}
+
+	for name, test := range tests {
+		test := test
+		t.Run(name, func(t *testing.T) {
+			t.Parallel()
+			_, err := TypesFromURIs(test.TypeURIs)
+			assert.Error(t, err)
+		})
+	}
 }
