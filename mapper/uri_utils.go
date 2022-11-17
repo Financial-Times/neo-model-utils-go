@@ -37,6 +37,7 @@ var typeURIs = map[string]string{
 	"FinancialInstrument":         "http://www.ft.com/ontology/FinancialInstrument",
 	"IndustryClassification":      "http://www.ft.com/ontology/IndustryClassification",
 	"NAICSIndustryClassification": "http://www.ft.com/ontology/NAICSIndustryClassification",
+	"FTAnIIndustryClassification": "http://www.ft.com/ontology/FTAnIIndustryClassification",
 }
 
 // APIURL - Establishes the ApiURL given a whether the Label is a Person, Organisation or Company (Public or Private)
