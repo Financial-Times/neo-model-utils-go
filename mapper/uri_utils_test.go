@@ -38,6 +38,7 @@ var (
 	financialInstrumentsLabels        = allLabelsFor("FinancialInstrument")
 	industryClassificationLabels      = allLabelsFor("IndustryClassification")
 	naicsIndustryClassificationLabels = allLabelsFor("NAICSIndustryClassification")
+	aniIndustryClassificationLabels   = allLabelsFor("FTAnIIndustryClassification")
 
 	thingURI                       = "http://www.ft.com/ontology/core/Thing"
 	conceptURI                     = "http://www.ft.com/ontology/concept/Concept"
@@ -61,6 +62,7 @@ var (
 	financialInstrumentURI         = "http://www.ft.com/ontology/FinancialInstrument"
 	industryClassificationURI      = "http://www.ft.com/ontology/IndustryClassification"
 	naicsIndustryClassificationURI = "http://www.ft.com/ontology/NAICSIndustryClassification"
+	aniIndustryClassificationURI   = "http://www.ft.com/ontology/FTAnIIndustryClassification"
 
 	uuid = "92f4ec09-436d-4092-a88c-96f54e34007c"
 
@@ -174,6 +176,10 @@ func TestTypeURIsForIndustryClassification(t *testing.T) {
 
 func TestTypeURIsForNAICSIndustryClassification(t *testing.T) {
 	assert.New(t).EqualValues([]string{thingURI, conceptURI, industryClassificationURI, naicsIndustryClassificationURI}, TypeURIs(naicsIndustryClassificationLabels))
+}
+
+func TestTypeURIsForFTAnIIndustryClassification(t *testing.T) {
+	assert.New(t).EqualValues([]string{thingURI, conceptURI, industryClassificationURI, aniIndustryClassificationURI}, TypeURIs(aniIndustryClassificationLabels))
 }
 
 func TestTypeURIsForAlphavilleSeries(t *testing.T) {
@@ -365,6 +371,7 @@ func TestTypesFromURIs(t *testing.T) {
 		"SpecialReport":               {TypeURIs: []string{thingURI, conceptURI, classificationURI, specialReportURI}, Types: specialReportLabels},
 		"IndustryClassification":      {TypeURIs: []string{thingURI, conceptURI, industryClassificationURI}, Types: industryClassificationLabels},
 		"NAICSIndustryClassification": {TypeURIs: []string{thingURI, conceptURI, industryClassificationURI, naicsIndustryClassificationURI}, Types: naicsIndustryClassificationLabels},
+		"FTAnIIndustryClassification": {TypeURIs: []string{thingURI, conceptURI, industryClassificationURI, aniIndustryClassificationURI}, Types: aniIndustryClassificationLabels},
 		"AlphavilleSeries":            {TypeURIs: []string{thingURI, conceptURI, classificationURI, alphavilleSeriesURI}, Types: alphavilleSeriesLabels},
 		"FinancialInstruments":        {TypeURIs: []string{thingURI, conceptURI, financialInstrumentURI}, Types: financialInstrumentsLabels},
 	}

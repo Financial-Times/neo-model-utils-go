@@ -31,6 +31,7 @@ var parentTypes = map[string]string{
 	"FinancialInstrument":         "Concept",
 	"IndustryClassification":      "Concept",
 	"NAICSIndustryClassification": "IndustryClassification",
+	"FTAnIIndustryClassification": "IndustryClassification",
 }
 
 // ParentType returns the immediate parent type for a given Type
@@ -60,7 +61,7 @@ func MostSpecificType(types []string) (string, error) {
 	return sorted[len(sorted)-1], nil
 }
 
-//Full type hierarchy is returned when provided either the concept type
+// Full type hierarchy is returned when provided either the concept type
 // or full uri of the most specific concept type
 func FullTypeHierarchy(highestLevelType string) []string {
 	var typeHierarchy []string
