@@ -15,3 +15,4 @@ Has the following features:
 1. APIURL - Establishing the ApiURL given a whether the Label is a Person, Organisation or Company (Public or Private)
 1. IDURL - Adds the appropriate prefix e.g `http://api.ft.com/things/`
 1. TypeURIs - Builds up the type URI based on type e.g `http://www.ft.com/ontology/Person`
+test
