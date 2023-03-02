@@ -4,6 +4,8 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/Financial-Times/neo-model-utils-go)](https://goreportcard.com/report/github.com/Financial-Times/neo-model-utils-go)
 [![Coverage Status](https://coveralls.io/repos/github/Financial-Times/neo-model-utils-go/badge.svg)](https://coveralls.io/github/Financial-Times/neo-model-utils-go)
 
+**This repo is being superseded by [cm-graph-ontology](https://github.com/Financial-Times/cm-graph-ontology).**
+
 Provides various packages for managing the space between Neo4j and our Models.
 
 ## Packages
